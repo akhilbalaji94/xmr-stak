@@ -29,5 +29,10 @@ test_script:
   - cd c:\xmr-stak\build\bin\Release
   - dir
   - copy C:\xmr-stak-dep\openssl\bin\* .
+  - 7z a myapp.zip *
   - set XMRSTAK_NOWAIT=1
   - xmr-stak.exe --help --noUAC
+
+artifacts:
+  - path: build\bin\Release\myapp.zip
+    name: MyApp
